@@ -3,8 +3,16 @@ import uvicorn
 
 api = fastapi.FastAPI()
 
+@api.get("/api/calculate")
 def calculator():
-    return 2*2
+    value = 2+2
+    
+    return{
+        "value": value
+    }
 
-uvicorn.run(api, port=8000"
-            
+
+
+
+if __name__ == "__main__":
+    uvicorn.run(api, port="8000", host="127.0.0.1")
